@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Zeno Unlock Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #f04e50;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .logo h1 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover, nav a.active {
+            color: white;
+        }
+        
+        nav a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background: #e03d3f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(240, 78, 80, 0.3);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 150px 0 80px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .service-header i {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+        
+        .service-header h3 {
+            font-size: 1.4rem;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: #475569;
+        }
+        
+        .service-features i {
+            color: var(--success);
+        }
+        
+        .service-options {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .service-option {
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .service-option:last-child {
+            border-bottom: none;
+        }
+        
+        .service-option:hover, .service-option.active {
+            background: #f8fafc;
+        }
+        
+        .service-option h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .service-option .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+        
+        .service-option small {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+        
+        .service-cta {
+            text-align: center;
+        }
+        
+        /* Security Section */
+        .security {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .security-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 12px;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .security-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .security-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(240, 78, 80, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .security-icon i {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+        
+        .security-item h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .security-item p {
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 80px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a i {
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .copyright a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .copyright a:hover {
+            color: var(--accent);
+        }
+        
+        /* Payment Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+        
+        .close:hover {
+            color: var(--accent);
+        }
+        
+        .payment-form-step h2 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .payment-form-step p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(240, 78, 80, 0.2);
+        }
+        
+        .price-details {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+        
+        .price-item.total {
+            border-top: 1px solid #e2e8f0;
+            margin-top: 10px;
+            padding-top: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .price-item.discount {
+            color: var(--success);
+        }
+        
+        .file-upload-wrapper {
+            position: relative;
+        }
+        
+        .file-upload-button {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .file-upload-button i {
+            color: var(--accent);
+        }
+        
+        #device-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .payment-alert {
+            margin: 25px 0;
+        }
+        
+        #proceed-to-payment {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        .payment-details-step {
+            display: none;
+        }
+        
+        .payment-method {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .payment-option {
+            flex: 1;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .payment-option:hover, .payment-option.active {
+            border-color: var(--accent);
+            background: rgba(240, 78, 80, 0.05);
+        }
+        
+        .payment-option.coming-soon {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .payment-option i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .coming-soon-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .usdt-details {
+            display: none;
+        }
+        
+        .usdt-details.active {
+            display: block;
+        }
+        
+        .crypto-address-modal {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .address-content-modal {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        #usdt-address {
+            flex: 1;
+            padding: 10px 15px;
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: monospace;
+        }
+        
+        .copy-btn-modal {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn-modal:hover {
+            background: #e03d3f;
+        }
+        
+        .copy-success-modal {
+            background: var(--success);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        #complete-usdt-payment {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .confirmation {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .confirmation i {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 20px;
+        }
+        
+        .confirmation h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .confirmation p {
+            margin-bottom: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .order-tracker {
+            display: flex;
+            justify-content: space-between;
+            max-width: 500px;
+            margin: 40px auto;
+            position: relative;
+        }
+        
+        .order-tracker:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+        
+        .tracker-step {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #e2e8f0;
+            color: var(--gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 700;
+        }
+        
+        .tracker-step.completed .step-number {
+            background: var(--success);
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .tracker-step.completed .step-label {
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .back-to-services {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .transaction-details {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 500px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .transaction-details h4 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .transaction-info {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .transaction-info:last-child {
+            border-bottom: none;
+        }
+        
+        .transaction-info .label {
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .transaction-info .value {
+            color: var(--gray);
+            font-weight: 600;
+        }
+        
+        .copy-transaction-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            display: block;
+            margin: 25px auto 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-transaction-btn:hover {
+            background: #e03d3f;
+        }
+        
+        .copy-transaction-success {
+            background: var(--success);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .language-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .lang-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .services {
+                padding: 180px 0 60px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .payment-method {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    Z
+                </div>
+                <h1>Zeno Unlock Pro</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="guarantee.html">Guarantee</a></li>
+                    <li><a href="process.html">How It Works</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </nav>
+            <a href="services.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Comprehensive Services</h2>
+                <p>Choose the service that suits your device and get the best solution for iCloud unlocking</p>
+            </div>
+            <div class="services-grid">
+                <!-- iPhone Unlock Service -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>iPhone Unlock</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Remove iCloud lock from all iPhone devices from the first generation to the latest versions</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Supports all models and versions</li>
+                            <li><i class="fas fa-check-circle"></i> Complete removal without traces</li>
+                            <li><i class="fas fa-check-circle"></i> Lifetime free updates</li>
+                            <li><i class="fas fa-check-circle"></i> Full technical support</li>
+                        </ul>
+                        <div class="service-options">
+                            <div class="service-option express active" data-type="express">
+                                <h4>Express Service</h4>
+                                <span class="price express-price">$29.99 - $199.99</span>
+                                <small>Processing in 20 minutes max</small>
+                            </div>
+                            <div class="service-option normal" data-type="normal">
+                                <h4>Standard Service</h4>
+                                <span class="price normal-price">$19.99 - $117.99</span>
+                                <small>40% discount - Processing in 12-24 hours</small>
+                            </div>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="cta-button request-service" data-service="iPhone">Order Service Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- iPad Unlock Service -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class="fas fa-tablet-alt"></i>
+                        <h3>iPad Unlock</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Solve iCloud lock problems for all iPad devices regardless of model or operating system</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Includes all iPad generations</li>
+                            <li><i class="fas fa-check-circle"></i> Compatible with latest iOS versions</li>
+                            <li><i class="fas fa-check-circle"></i> Guaranteed lock won't return</li>
+                            <li><i class="fas fa-check-circle"></i> Free updates forever</li>
+                        </ul>
+                        <div class="service-options">
+                            <div class="service-option express active" data-type="express">
+                                <h4>Express Service</h4>
+                                <span class="price express-price">$29.99 - $149.99</span>
+                                <small>Processing in 20 minutes max</small>
+                            </div>
+                            <div class="service-option normal" data-type="normal">
+                                <h4>Standard Service</h4>
+                                <span class="price normal-price">$19.99 - $88.99</span>
+                                <small>40% discount - Processing in 12-24 hours</small>
+                            </div>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="cta-button request-service" data-service="iPad">Order Service Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mac Unlock Service -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class="fas fa-laptop"></i>
+                        <h3>Mac Unlock</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Remove iCloud lock from MacBook and iMac devices to enable free use of the device</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Supports all macOS versions</li>
+                            <li><i class="fas fa-check-circle"></i> Complete removal while preserving data</li>
+                            <li><i class="fas fa-check-circle"></i> Full device functions</li>
+                            <li><i class="fas fa-check-circle"></i> Permanent free updates</li>
+                        </ul>
+                        <div class="service-options">
+                            <div class="service-option express active" data-type="express">
+                                <h4>Express Service</h4>
+                                <span class="price express-price">$49.99 - $199.99</span>
+                                <small>Processing in 20 minutes max</small>
+                            </div>
+                            <div class="service-option normal" data-type="normal">
+                                <h4>Standard Service</h4>
+                                <span class="price normal-price">$39.99 - $117.99</span>
+                                <small>40% discount - Processing in 12-24 hours</small>
+                            </div>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="cta-button request-service" data-service="Mac">Order Service Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security" id="security">
+        <div class="container">
+            <div class="section-title">
+                <h2>Security & Privacy</h2>
+                <p>We ensure the protection of your data and devices with advanced security protocols</p>
+            </div>
+            <div class="security-grid">
+                <div class="security-item">
+                    <div class="security-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Data Encryption</h3>
+                    <p>All your data is encrypted with AES-256 encryption protocols, ensuring protection from any breach or leakage</p>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Complete Privacy</h3>
+                    <p>Your data remains completely confidential and is not shared with any third party under any circumstances</p>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>SSL Certificate</h3>
+                    <p>We use SSL certificates to secure your connections and protect your data while browsing and transacting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Zeno Unlock Pro</h3>
+                    <p>Leading in iCloud unlock services using the latest technologies. We guarantee fast, secure, and 100% guaranteed solutions.</p>
+                    <div class="social-links"> </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="features.html"><i class="fas fa-chevron-right"></i> Features</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="guarantee.html"><i class="fas fa-chevron-right"></i> Guarantee</a></li>
+                        <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> iPhone Unlock</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> iPad Unlock</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Mac Unlock</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:zenocoinz@gmail.com"><i class="fas fa-envelope"></i> Email Address</a></li>
+                        <li><a href="https://wa.me/+14423920314"><i class="fab fa-whatsapp"></i> WhatsApp Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2009-2025 Zeno Unlock Pro. All rights reserved. | Privacy Policy | We are committed to protecting your data and ensuring the confidentiality of your personal information according to the highest security standards.</p>
+                <p><a href="#" style="color: #64748b; text-decoration: none;">Terms of Service</a> | <a href="#" style="color: #64748b; text-decoration: none;">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="payment-form-step">
+                <h2>Complete Payment Process</h2>
+                <p>Service: <span id="service-name">iPhone Unlock</span></p>
+                <p>Service Type: <span id="service-type">Express Service</span></p>
+                
+                <div class="form-group">
+                    <label for="device-model">Device Model:</label>
+                    <select id="device-model" name="device-model" required>
+                        <option value="" disabled selected>Select device model</option>
+                        <optgroup label="iPhone">
+                            <option value="iPhone 7" data-base-price="49.99">iPhone 7</option>
+                            <option value="iPhone 7 Plus" data-base-price="54.99">iPhone 7 Plus</option>
+                            <option value="iPhone 8" data-base-price="59.99">iPhone 8</option>
+                            <option value="iPhone 8 Plus" data-base-price="64.99">iPhone 8 Plus</option>
+                            <option value="iPhone X" data-base-price="69.99">iPhone X</option>
+                            <option value="iPhone XS" data-base-price="74.99">iPhone XS</option>
+                            <option value="iPhone XS Max" data-base-price="79.99">iPhone XS Max</option>
+                            <option value="iPhone XR" data-base-price="64.99">iPhone XR</option>
+                            <option value="iPhone 11" data-base-price="74.99">iPhone 11</option>
+                            <option value="iPhone 11 Pro" data-base-price="84.99">iPhone 11 Pro</option>
+                            <option value="iPhone 11 Pro Max" data-base-price="89.99">iPhone 11 Pro Max</option>
+                            <option value="iPhone SE (2nd Gen)" data-base-price="49.99">iPhone SE (2nd Gen)</option>
+                            <option value="iPhone 12" data-base-price="89.99">iPhone 12</option>
+                            <option value="iPhone 12 mini" data-base-price="84.99">iPhone 12 mini</option>
+                            <option value="iPhone 12 Pro" data-base-price="99.99">iPhone 12 Pro</option>
+                            <option value="iPhone 12 Pro Max" data-base-price="109.99">iPhone 12 Pro Max</option>
+                            <option value="iPhone 13" data-base-price="109.99">iPhone 13</option>
+                            <option value="iPhone 13 mini" data-base-price="104.99">iPhone 13 mini</option>
+                            <option value="iPhone 13 Pro" data-base-price="119.99">iPhone 13 Pro</option>
+                            <option value="iPhone 13 Pro Max" data-base-price="129.99">iPhone 13 Pro Max</option>
+                            <option value="iPhone SE (3rd Gen)" data-base-price="59.99">iPhone SE (3rd Gen)</option>
+                            <option value="iPhone 14" data-base-price="119.99">iPhone 14</option>
+                            <option value="iPhone 14 Plus" data-base-price="129.99">iPhone 14 Plus</option>
+                            <option value="iPhone 14 Pro" data-base-price="139.99">iPhone 14 Pro</option>
+                            <option value="iPhone 14 Pro Max" data-base-price="149.99">iPhone 14 Pro Max</option>
+                            <option value="iPhone 15" data-base-price="139.99">iPhone 15</option>
+                            <option value="iPhone 15 Plus" data-base-price="149.99">iPhone 15 Plus</option>
+                            <option value="iPhone 15 Pro" data-base-price="169.99">iPhone 15 Pro</option>
+                            <option value="iPhone 15 Pro Max" data-base-price="179.99">iPhone 15 Pro Max</option>
+                        </optgroup>
+                        <optgroup label="iPad">
+                            <option value="iPad 9th Gen" data-base-price="79.99">iPad 9th Gen</option>
+                            <option value="iPad 10th Gen" data-base-price="89.99">iPad 10th Gen</option>
+                            <option value="iPad Air 4" data-base-price="99.99">iPad Air 4</option>
+                            <option value="iPad Air 5" data-base-price="109.99">iPad Air 5</option>
+                            <option value="iPad Pro 11 (2020)" data-base-price="119.99">iPad Pro 11 (2020)</option>
+                            <option value="iPad Pro 11 (2021)" data-base-price="129.99">iPad Pro 11 (2021)</option>
+                            <option value="iPad Pro 11 (2022)" data-base-price="139.99">iPad Pro 11 (2022)</option>
+                            <option value="iPad Pro 12.9 (2021)" data-base-price="149.99">iPad Pro 12.9 (2021)</option>
+                            <option value="iPad Pro 12.9 (2022)" data-base-price="159.99">iPad Pro 12.9 (2022)</option>
+                        </optgroup>
+                        <optgroup label="Mac">
+                            <option value="MacBook Air (M1)" data-base-price="149.99">MacBook Air (M1)</option>
+                            <option value="MacBook Air (M2)" data-base-price="169.99">MacBook Air (M2)</option>
+                            <option value="MacBook Pro 13 (M2)" data-base-price="189.99">MacBook Pro 13 (M2)</option>
+                            <option value="MacBook Pro 14 (M1 Pro)" data-base-price="219.99">MacBook Pro 14 (M1 Pro)</option>
+                            <option value="MacBook Pro 14 (M2 Pro)" data-base-price="239.99">MacBook Pro 14 (M2 Pro)</option>
+                            <option value="MacBook Pro 16 (M1 Pro)" data-base-price="249.99">MacBook Pro 16 (M1 Pro)</option>
+                            <option value="MacBook Pro 16 (M2 Pro)" data-base-price="269.99">MacBook Pro 16 (M2 Pro)</option>
+                            <option value="iMac 24 (M1)" data-base-price="199.99">iMac 24 (M1)</option>
+                            <option value="Mac Studio (M1 Max)" data-base-price="299.99">Mac Studio (M1 Max)</option>
+                            <option value="Mac Studio (M1 Ultra)" data-base-price="349.99">Mac Studio (M1 Ultra)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="price-details">
+                    <div class="price-item">
+                        <span>Original Price:</span>
+                        <span id="original-price">$0.00</span>
+                    </div>
+                    <div class="price-item discount" id="discount-row" style="display: none;">
+                        <span>Discount (40%):</span>
+                        <span id="discount-amount">-$0.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Service Fee (1.5%):</span>
+                        <span id="service-fee">$0.00</span>
+                    </div>
+                    <div class="price-item total">
+                        <span>Total:</span>
+                        <span id="total-price">$0.00</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="device-info">Device Serial Number:</label>
+                    <textarea id="device-info" name="device-info" required placeholder="Enter device serial number..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="device-photo">Lock Screen Photo (optional):</label>
+                    <div class="file-upload-wrapper">
+                        <div class="file-upload-button">
+                            <i class="fas fa-upload"></i>
+                            <span class="file-name" id="file-name">No file chosen</span>
+                        </div>
+                        <input type="file" id="device-photo" name="device-photo" accept="image/*">
+                    </div>
+                </div>
+                
+                <div class="payment-alert">
+                    <div style="background: rgba(255, 78, 80, 0.1); border-left: 4px solid var(--accent); padding: 15px; border-radius: 8px; margin-bottom: 25px;">
+                        <p><i class="fas fa-exclamation-circle" style="color: var(--accent);"></i> If you face any problem with payment, please contact support via <a href="https://wa.me/+14423920314" style="color: var(--accent);">WhatsApp</a> to get the service directly.</p>
+                    </div>
+                </div>
+                
+                <button id="proceed-to-payment" class="cta-button">Proceed to Payment</button>
+            </div>
+            
+            <div class="payment-details-step" style="display:none;">
+                <h2>Payment Processing</h2>
+                
+                <div class="payment-method">
+                    <div class="payment-option active" data-method="usdt">
+                        <i class="fab fa-bitcoin"></i>
+                        <h4>USDT TRC20</h4>
+                        <p>Pay using USDT</p>
+                    </div>
+                    <div class="payment-option coming-soon" data-method="credit">
+                        <i class="fas fa-credit-card"></i>
+                        <h4>Credit Cards</h4>
+                        <p>Visa / Mastercard</p>
+                        <div class="coming-soon-badge">Coming Soon</div>
+                    </div>
+                </div>
+                
+                <div class="usdt-details active">
+                    <div class="crypto-address-modal">
+                        <h3>Pay with USDT TRC20</h3>
+                        <p>Please transfer the amount to the following address:</p>
+                        
+                        <div class="address-content-modal">
+                            <input type="text" id="usdt-address" value="TK2LNPpUAEzK36syGQ9aMM1yMa14BmPrYN" readonly>
+                            <button class="copy-btn-modal" onclick="copyUsdtAddress()">Copy Address</button>
+                        </div>
+                        <div class="copy-success-modal" id="copy-success">Address copied successfully!</div>
+                        
+                        <p style="margin-top: 20px; color: #94a3b8;">
+                            <i class="fas fa-info-circle"></i> After completing the transfer, please send the payment proof via email or WhatsApp
+                        </p>
+                    </div>
+                    
+                    <button id="complete-usdt-payment" class="cta-button">Transfer Completed</button>
+                </div>
+            </div>
+            
+            <div class="confirmation">
+                <i class="fas fa-check-circle"></i>
+                <h3>Operation Completed Successfully!</h3>
+                <p>Your order has been received successfully and will be processed within 5 to 20 minutes. You will receive a confirmation email with usage instructions.</p>
+                <p>If you face any problem, you can contact support via <a href="https://wa.me/+14423920314" style="color: var(--primary);">WhatsApp</a></p>
+                
+                <div class="order-tracker">
+                    <div class="tracker-step completed">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Order Placed</div>
+                    </div>
+                    <div class="tracker-step completed">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Processing</div>
+                    </div>
+                    <div class="tracker-step completed">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Order Complete</div>
+                    </div>
+                </div>
+                
+                <!-- Transaction Details -->
+                <div class="transaction-details">
+                    <h4>Transaction Details</h4>
+                    <div class="transaction-info">
+                        <div class="label">Transaction ID:</div>
+                        <div class="value" id="transaction-id">ZENO-<span id="trans-id">123456</span></div>
+                    </div>
+                    <div class="transaction-info">
+                        <div class="label">Device Model:</div>
+                        <div class="value" id="conf-device-model">iPhone 15 Pro</div>
+                    </div>
+                    <div class="transaction-info">
+                        <div class="label">Device Serial:</div>
+                        <div class="value" id="conf-device-serial">SN-1234567890</div>
+                    </div>
+                    <div class="transaction-info">
+                        <div class="label">Customer Email:</div>
+                        <div class="value" id="conf-customer-email">customer@example.com</div>
+                    </div>
+                    <button class="copy-transaction-btn" onclick="copyTransactionDetails()">Copy Transaction Details</button>
+                    <div class="copy-transaction-success" id="copy-transaction-success" style="display:none;">Copied successfully!</div>
+                </div>
+                
+                <a href="#services" class="back-to-services">Back to Services</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Helper function to copy text to clipboard
+        function copyToClipboard(text, successElement) {
+            // Modern method (works only on HTTPS)
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text)
+                    .then(() => showSuccess(successElement))
+                    .catch(() => useFallbackCopy(text, successElement));
+            } else {
+                // Fallback method for HTTP environments
+                useFallbackCopy(text, successElement);
+            }
+        }
+
+        // Fallback copy method
+        function useFallbackCopy(text, successElement) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            textArea.style.opacity = 0;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) showSuccess(successElement);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            } finally {
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // Show success message
+        function showSuccess(element) {
+            element.style.display = 'block';
+            setTimeout(() => element.style.display = 'none', 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Service option selection
+            const serviceOptions = document.querySelectorAll('.service-option');
+            serviceOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const parentOptions = this.closest('.service-options');
+                    parentOptions.querySelectorAll('.service-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+
+            // Request service buttons
+            const requestServiceBtns = document.querySelectorAll('.request-service');
+            const paymentModal = document.getElementById('payment-modal');
+            const serviceNameEl = document.getElementById('service-name');
+            const serviceTypeEl = document.getElementById('service-type');
+            const originalPriceEl = document.getElementById('original-price');
+            const discountRow = document.getElementById('discount-row');
+            const discountAmountEl = document.getElementById('discount-amount');
+            const serviceFeeEl = document.getElementById('service-fee');
+            const totalPriceEl = document.getElementById('total-price');
+            
+            let currentBasePrice = 0;
+            let currentServiceType = 'express';
+            
+            requestServiceBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const serviceName = this.getAttribute('data-service');
+                    const parentCard = this.closest('.service-card');
+                    const selectedOption = parentCard.querySelector('.service-option.active');
+                    
+                    let serviceType = 'Express Service';
+                    
+                    if (selectedOption) {
+                        serviceType = selectedOption.querySelector('h4').textContent;
+                        currentServiceType = selectedOption.getAttribute('data-type');
+                    }
+                    
+                    serviceNameEl.textContent = serviceName;
+                    serviceTypeEl.textContent = serviceType;
+                    
+                    // Reset prices
+                    updatePrices(0);
+                    
+                    paymentModal.style.display = 'block';
+                });
+            });
+
+            // Close modal
+            const closeModal = document.querySelector('.close');
+            closeModal.addEventListener('click', function() {
+                paymentModal.style.display = 'none';
+                resetModal();
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === paymentModal) {
+                    paymentModal.style.display = 'none';
+                    resetModal();
+                }
+            });
+
+            // Device model change
+            const deviceModelEl = document.getElementById('device-model');
+            deviceModelEl.addEventListener('change', function() {
+                const selectedOption = this.options[this.selectedIndex];
+                currentBasePrice = parseFloat(selectedOption.getAttribute('data-base-price')) || 0;
+                updatePrices(currentBasePrice);
+            });
+
+            // File upload
+            const fileInput = document.getElementById('device-photo');
+            const fileName = document.getElementById('file-name');
+            if (fileInput && fileName) {
+                fileInput.addEventListener('change', function() {
+                    if (this.files.length > 0) {
+                        fileName.textContent = this.files[0].name;
+                    } else {
+                        fileName.textContent = 'No file chosen';
+                    }
+                });
+            }
+
+            // Payment method selection
+            const paymentOptions = document.querySelectorAll('.payment-option');
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    if (this.classList.contains('coming-soon')) return;
+                    
+                    paymentOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const method = this.getAttribute('data-method');
+                    document.querySelectorAll('.usdt-details').forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    document.querySelector(`.usdt-details`).classList.add('active');
+                });
+            });
+
+            // Proceed to payment
+            const proceedBtn = document.getElementById('proceed-to-payment');
+            proceedBtn.addEventListener('click', function() {
+                const deviceModel = document.getElementById('device-model').value;
+                const deviceInfo = document.getElementById('device-info').value;
+                const email = document.getElementById('email').value;
+                
+                if (!deviceModel || deviceModel === '') {
+                    alert('Please select a device model');
+                    return;
+                }
+                
+                if (!deviceInfo || deviceInfo.trim() === '') {
+                    alert('Please enter device serial number');
+                    return;
+                }
+                
+                if (!email || !validateEmail(email)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+                
+                document.querySelector('.payment-form-step').style.display = 'none';
+                document.querySelector('.payment-details-step').style.display = 'block';
+            });
+
+            // Email validation
+            function validateEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            // Complete USDT payment
+            const completeUsdtPaymentBtn = document.getElementById('complete-usdt-payment');
+            if (completeUsdtPaymentBtn) {
+                completeUsdtPaymentBtn.addEventListener('click', function() {
+                    document.querySelector('.payment-details-step').style.display = 'none';
+                    document.querySelector('.confirmation').style.display = 'block';
+                    
+                    // Generate random transaction ID
+                    const transId = Math.floor(100000 + Math.random() * 900000);
+                    document.getElementById('trans-id').textContent = transId;
+                    
+                    // Populate confirmation details
+                    document.getElementById('conf-device-model').textContent = 
+                        document.getElementById('device-model').value;
+                    
+                    document.getElementById('conf-device-serial').textContent = 
+                        document.getElementById('device-info').value;
+                    
+                    document.getElementById('conf-customer-email').textContent = 
+                        document.getElementById('email').value;
+                });
+            }
+            
+            // Update prices function
+            function updatePrices(basePrice) {
+                let originalPrice = basePrice;
+                let discountAmount = 0;
+                
+                // Apply 40% discount for standard service
+                if (currentServiceType === 'normal') {
+                    discountAmount = originalPrice * 0.4;
+                    discountRow.style.display = 'flex';
+                } else {
+                    discountRow.style.display = 'none';
+                }
+                
+                const priceAfterDiscount = originalPrice - discountAmount;
+                const serviceFee = priceAfterDiscount * 0.015;
+                const total = priceAfterDiscount + serviceFee;
+                
+                originalPriceEl.textContent = '$' + originalPrice.toFixed(2);
+                discountAmountEl.textContent = '-$' + discountAmount.toFixed(2);
+                serviceFeeEl.textContent = '$' + serviceFee.toFixed(2);
+                totalPriceEl.textContent = '$' + total.toFixed(2);
+            }
+            
+            // Reset modal function
+            function resetModal() {
+                document.querySelector('.payment-form-step').style.display = 'block';
+                document.querySelector('.payment-details-step').style.display = 'none';
+                document.querySelector('.confirmation').style.display = 'none';
+                document.getElementById('device-model').selectedIndex = 0;
+                document.getElementById('email').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('device-info').value = '';
+                document.getElementById('file-name').textContent = 'No file chosen';
+                fileInput.value = '';
+                currentBasePrice = 0;
+                updatePrices(0);
+            }
+
+            // Header effect on scroll
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (header) {
+                    if (window.scrollY > 100) {
+                        header.style.backgroundColor = 'rgba(15, 23, 42, 0.98)';
+                        header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.4)';
+                    } else {
+                        header.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
+                        header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+                    }
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Copy transaction details
+            window.copyTransactionDetails = function() {
+                const transId = document.getElementById('trans-id').textContent;
+                const deviceModel = document.getElementById('conf-device-model').textContent;
+                const deviceSerial = document.getElementById('conf-device-serial').textContent;
+                const customerEmail = document.getElementById('conf-customer-email').textContent;
+                
+                const textToCopy = `Transaction ID: ZENO-${transId}\nDevice Model: ${deviceModel}\nDevice Serial: ${deviceSerial}\nCustomer Email: ${customerEmail}`;
+                
+                const copyTransactionSuccess = document.getElementById('copy-transaction-success');
+                copyToClipboard(textToCopy, copyTransactionSuccess);
+            }
+            
+            // Copy USDT address
+            window.copyUsdtAddress = function() {
+                const usdtAddress = document.getElementById('usdt-address');
+                if (usdtAddress) {
+                    const copySuccess = document.getElementById('copy-success');
+                    copyToClipboard(usdtAddress.value, copySuccess);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

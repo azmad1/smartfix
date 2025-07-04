@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Zeno Unlock Pro | iCloud Unlock Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #f04e50;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --success: #10b981;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .logo h1 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav a:hover, nav a.active {
+            color: white;
+        }
+        
+        nav a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #e03d3f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(240, 78, 80, 0.3);
+        }
+        
+        /* Hero Section */
+        .process-hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1551645120-d70bfe84c826?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .process-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .process-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .process-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+        
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        
+        .steps-container:before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 20%;
+            min-width: 180px;
+            margin-bottom: 40px;
+        }
+        
+        .step-number {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border: 3px solid var(--accent);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .step-number i {
+            font-size: 2.5rem;
+        }
+        
+        .step:hover .step-number {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(240, 78, 80, 0.3);
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .step p {
+            color: var(--gray);
+            padding: 0 10px;
+        }
+        
+        /* Process Details */
+        .process-details {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
+        }
+        
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .details-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .details-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .details-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .details-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .details-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .details-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .details-list i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            min-width: 30px;
+        }
+        
+        .details-image {
+            flex: 1;
+            min-width: 300px;
+            background: url('https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            min-height: 400px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Timeline */
+        .timeline {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: #e2e8f0;
+        }
+        
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 100%;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            text-align: right;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 4px solid var(--accent);
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .timeline-content p {
+            color: var(--gray);
+        }
+        
+        .timeline-content .time {
+            display: block;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-marker {
+            left: 50%;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            background: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .faq-answer {
+            background: #f8fafc;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer p {
+            padding: 20px 0;
+            color: var(--gray);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1551645120-d70bfe84c826?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-button.large {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 80px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .copyright a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .copyright a:hover {
+            color: var(--accent);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .process-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .steps-container {
+                justify-content: center;
+            }
+            
+            .step {
+                width: 33%;
+            }
+            
+            .steps-container:before {
+                display: none;
+            }
+            
+            .timeline-container:before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: 80%;
+                margin-left: 80px !important;
+                text-align: left !important;
+                border-left: 4px solid var(--accent) !important;
+                border-right: none !important;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 80px !important;
+            }
+            
+            .timeline-marker {
+                left: 30px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .process-hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .process-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+            
+            .step {
+                width: 50%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .step {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    Z
+                </div>
+                <h1>Zeno Unlock Pro</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="guarantee.html">Guarantee</a></li>
+                    <li><a href="process.html" class="active">How It Works</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </nav>
+            <a href="services.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="process-hero">
+        <div class="container process-hero-content">
+            <h1>How Our Unlock Service Works</h1>
+            <p>Simple, fast, and secure - unlock your device in just 4 easy steps with our professional service</p>
+            <a href="services.html" class="cta-button">Start Unlock Process</a>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="process-steps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Simple 4-Step Process</h2>
+                <p>Our streamlined process makes unlocking your device quick and hassle-free</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Choose Service</h3>
+                    <p>Select the service that matches your device type and needs</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Make Payment</h3>
+                    <p>Complete your payment securely via our payment methods</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Provide Details</h3>
+                    <p>Send us your device information (IMEI or Serial Number)</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Receive Unlock</h3>
+                    <p>Get confirmation and instructions to activate your device</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Details -->
+    <section class="process-details">
+        <div class="container">
+            <div class="details-container">
+                <div class="details-content">
+                    <h2>Detailed Unlock Process</h2>
+                    <p>Our unlocking process is designed to be simple, secure, and efficient. We've perfected our methods over 10+ years to provide the fastest and most reliable iCloud unlock service available.</p>
+                    
+                    <ul class="details-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>No Physical Access Needed</h4>
+                                <p>We unlock devices remotely using only your IMEI or Serial Number</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Safe & Secure Process</h4>
+                                <p>Your data remains private - we never access your personal information</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>No Jailbreak Required</h4>
+                                <p>Our method maintains your device warranty and security</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Permanent Solution</h4>
+                                <p>Once unlocked, your device stays unlocked through updates and resets</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="services.html" class="cta-button">View Our Services</a>
+                </div>
+                <div class="details-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Processing Timeline</h2>
+                <p>Here's what happens after you place your order with us</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="time">Immediately</span>
+                        <h3>Order Received</h3>
+                        <p>We receive your order details and payment confirmation</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="time">Within 5 Minutes</span>
+                        <h3>Order Processing</h3>
+                        <p>Our system begins processing your unlock request</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="time">5-15 Minutes</span>
+                        <h3>Server Verification</h3>
+                        <p>We verify device status with Apple servers</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="time">15-20 Minutes</span>
+                        <h3>Unlock Completion</h3>
+                        <p>Device is permanently removed from iCloud activation lock</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="time">Within 20 Minutes</span>
+                        <h3>Confirmation Sent</h3>
+                        <p>You receive email with unlock confirmation and instructions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about our unlock process</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does the unlock process take? 
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>With our Express Service, most devices are unlocked within 20 minutes. Standard Service takes 12-24 hours. Processing time depends on the device model and current server load.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need to send my device to you?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, our service is completely remote. We only require your device's IMEI or serial number to process the unlock. You'll receive instructions via email once the process is complete.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is my personal data safe during the process?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We never access your personal data during the unlock process. Our method only communicates with Apple servers to remove the activation lock, without touching your personal information.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Will this process work on the latest iOS version?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our service supports all iOS versions including the latest releases. We continuously update our methods to ensure compatibility with new iOS updates.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How will I know when my device is unlocked?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll receive an email notification with confirmation and instructions once your device is unlocked. You can also check status through your account dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Unlock Your Device?</h2>
+            <p>Join over 10,100 satisfied customers who have regained full access to their Apple devices</p>
+            <a href="services.html" class="cta-button large">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Zeno Unlock Pro</h3>
+                    <p>Leading in iCloud unlock services using the latest technologies. We guarantee fast, secure, and 100% guaranteed solutions.</p>
+                    <div class="social-links"> </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="guarantee.html">Guarantee</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">iPhone Unlock</a></li>
+                        <li><a href="services.html">iPad Unlock</a></li>
+                        <li><a href="services.html">Mac Unlock</a></li>
+                        <li><a href="services.html">Apple ID Recovery</a></li>
+                        <li><a href="services.html">MDM Removal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+      <li><a href="mailto:zenocoinz@gmail.com"><i class="fas fa-envelope"></i> email adrress</a></li>
+                        <li><a href="https://wa.me/+14423920314"><i class="fab fa-whatsapp"></i> WhatsApp Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2009-2025 Zeno Unlock Pro. All rights reserved. | Privacy Policy | We are committed to protecting your data and ensuring the confidentiality of your personal information according to the highest security standards.</p>
+                <p><a href="#" style="color: #64748b; text-decoration: none;">Terms of Service</a> | <a href="#" style="color: #64748b; text-decoration: none;">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header effect on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) {
+                if (window.scrollY > 100) {
+                    header.style.backgroundColor = 'rgba(15, 23, 42, 0.98)';
+                    header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.4)';
+                } else {
+                    header.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+                }
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

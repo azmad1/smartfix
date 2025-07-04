@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guarantee - Zeno Unlock Pro | iCloud Unlock Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #f04e50;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --success: #10b981;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .logo h1 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav a:hover, nav a.active {
+            color: white;
+        }
+        
+        nav a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #e03d3f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(240, 78, 80, 0.3);
+        }
+        
+        /* Hero Section */
+        .guarantee-hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .guarantee-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .guarantee-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .guarantee-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Guarantee Section */
+        .guarantee {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+        
+        .guarantee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .guarantee-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .guarantee-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--accent);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s ease;
+            z-index: -1;
+        }
+        
+        .guarantee-card:hover:before {
+            transform: scaleY(1);
+        }
+        
+        .guarantee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .guarantee-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(240, 78, 80, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+        
+        .guarantee-card:hover .guarantee-icon {
+            background: var(--accent);
+        }
+        
+        .guarantee-card:hover .guarantee-icon i {
+            color: white;
+        }
+        
+        .guarantee-icon i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .guarantee-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .guarantee-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        /* Security Assurance */
+        .security-assurance {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
+        }
+        
+        .assurance-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .assurance-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .assurance-image {
+            flex: 1;
+            min-width: 300px;
+            background: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            min-height: 400px;
+        }
+        
+        .assurance-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .assurance-list li {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .assurance-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .assurance-list i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+        
+        .assurance-list h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .assurance-list p {
+            color: var(--gray);
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 60px auto 0;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        
+        .steps-container:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 25%;
+            min-width: 200px;
+            margin-bottom: 40px;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+        
+        .step:hover .step-number {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(240, 78, 80, 0.3);
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .step p {
+            color: var(--gray);
+            padding: 0 15px;
+        }
+        
+        /* Guarantee Badge */
+        .guarantee-badge {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.05), rgba(15, 23, 42, 0.05));
+        }
+        
+        .badge-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border: 2px dashed var(--accent);
+        }
+        
+        .badge-icon {
+            width: 120px;
+            height: 120px;
+            background: rgba(240, 78, 80, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+        
+        .badge-icon i {
+            font-size: 4rem;
+            color: var(--accent);
+        }
+        
+        .badge-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .badge-container p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1551645120-d70bfe84c826?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-button.large {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 80px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .copyright a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .copyright a:hover {
+            color: var(--accent);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .guarantee-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .assurance-container {
+                flex-direction: column;
+            }
+            
+            .steps-container:before {
+                display: none;
+            }
+            
+            .step {
+                width: 50%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .guarantee-hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .guarantee-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+            
+            .step {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    Z
+                </div>
+                <h1>Zeno Unlock Pro</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="guarantee.html" class="active">Guarantee</a></li>
+                    <li><a href="process.html">How It Works</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </nav>
+            <a href="services.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="guarantee-hero">
+        <div class="container guarantee-hero-content">
+            <h1>Our 100% Success Guarantee</h1>
+            <p>We stand behind our service with the strongest guarantee in the industry. If we can't unlock your device, you get a full refund - no questions asked.</p>
+            <a href="services.html" class="cta-button">Unlock Your Device Now</a>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Unbeatable Guarantees</h2>
+                <p>We offer multiple layers of protection for your peace of mind</p>
+            </div>
+            
+            <div class="guarantee-grid">
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Success Guarantee</h3>
+                    <p>If we're unable to unlock your device, you'll receive a full refund immediately. No hassle, no questions asked.</p>
+                    <p class="highlight">98.7% success rate</p>
+                </div>
+                
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Data Security Guarantee</h3>
+                    <p>Your personal information is encrypted and never shared. We follow strict data protection protocols.</p>
+                    <p class="highlight">Military-grade AES-256 encryption</p>
+                </div>
+                
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Permanent Unlock Guarantee</h3>
+                    <p>Once unlocked, your device stays unlocked forever - even after software updates or factory resets.</p>
+                    <p class="highlight">Lifetime service guarantee</p>
+                </div>
+                
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Privacy Protection Guarantee</h3>
+                    <p>We never access your personal data during the unlock process. Your privacy is our priority.</p>
+                    <p class="highlight">Zero data access policy</p>
+                </div>
+                
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support Guarantee</h3>
+                    <p>Our expert support team is available around the clock to assist you with any questions or issues.</p>
+                    <p class="highlight">Average response time: 8 minutes</p>
+                </div>
+                
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Free Updates Guarantee</h3>
+                    <p>Receive free lifetime updates to ensure your device stays unlocked through all future iOS updates.</p>
+                    <p class="highlight">No hidden fees or charges</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Assurance -->
+    <section class="security-assurance">
+        <div class="container">
+            <div class="section-title">
+                <h2>Security & Trust Assurance</h2>
+                <p>We implement the highest security standards to protect you and your devices</p>
+            </div>
+            
+            <div class="assurance-container">
+                <div class="assurance-content">
+                    <h3>Your Security Is Our Top Priority</h3>
+                    <p>At Zeno Unlock Pro, we understand the importance of security when dealing with your valuable devices. Our multi-layered security approach ensures your information remains confidential and your devices are protected throughout the unlock process.</p>
+                    
+                    <ul class="assurance-list">
+                        <li>
+                            <i class="fas fa-fingerprint"></i>
+                            <div>
+                                <h4>End-to-End Encryption</h4>
+                                <p>All data transmissions are secured with military-grade AES-256 encryption</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-server"></i>
+                            <div>
+                                <h4>Secure Servers</h4>
+                                <p>Our servers are protected with enterprise-grade firewalls and security protocols</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-check"></i>
+                            <div>
+                                <h4>No Data Retention</h4>
+                                <p>We permanently delete all device information after the unlock process completes</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-user-lock"></i>
+                            <div>
+                                <h4>Privacy Protection</h4>
+                                <p>We never access your personal data during the unlock process</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>SSL Certificate</h4>
+                                <p>All connections are secured with 256-bit SSL encryption</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="assurance-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="process-steps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Guarantee Process</h2>
+                <p>Simple steps to claim our guarantee if needed</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Submit Request</h3>
+                    <p>Complete our service request form with your device details</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Processing</h3>
+                    <p>We process your unlock request within the promised timeframe</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Verification</h3>
+                    <p>If unsuccessful, our team verifies the result</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Refund Processed</h3>
+                    <p>Full refund issued immediately to your original payment method</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Badge -->
+    <section class="guarantee-badge">
+        <div class="container">
+            <div class="badge-container">
+                <div class="badge-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h2>Our 100% Satisfaction Guarantee</h2>
+                <p>We're so confident in our service that we back it with an industry-leading guarantee. If for any reason we're unable to unlock your device, we'll refund every penny of your purchase immediately. No hassle, no runaround - just straightforward satisfaction guaranteed.</p>
+                <p><strong>Over 37,600 devices unlocked successfully since 2009</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Experience Our Guaranteed Service Today</h2>
+            <p>Join thousands of satisfied customers who have regained full access to their devices</p>
+            <a href="services.html" class="cta-button large">Unlock Your Device Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Zeno Unlock Pro</h3>
+                    <p>Leading in iCloud unlock services using the latest technologies. We guarantee fast, secure, and 100% guaranteed solutions.</p>
+                    <div class="social-links"> </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="guarantee.html">Guarantee</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">iPhone Unlock</a></li>
+                        <li><a href="services.html">iPad Unlock</a></li>
+                        <li><a href="services.html">Mac Unlock</a></li>
+                        <li><a href="services.html">Apple ID Recovery</a></li>
+                        <li><a href="services.html">MDM Removal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                            <li><a href="mailto:zenocoinz@gmail.com"><i class="fas fa-envelope"></i> email adrress</a></li>
+                        <li><a href="https://wa.me/+14423920314"><i class="fab fa-whatsapp"></i> WhatsApp Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2009-2025 Zeno Unlock Pro. All rights reserved. | Privacy Policy | We are committed to protecting your data and ensuring the confidentiality of your personal information according to the highest security standards.</p>
+                <p><a href="#" style="color: #64748b; text-decoration: none;">Terms of Service</a> | <a href="#" style="color: #64748b; text-decoration: none;">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header effect on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) {
+                if (window.scrollY > 100) {
+                    header.style.backgroundColor = 'rgba(15, 23, 42, 0.98)';
+                    header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.4)';
+                } else {
+                    header.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+                }
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
